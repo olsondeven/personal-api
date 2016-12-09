@@ -28,6 +28,7 @@ app.post('/restaurants',mainCtrl.postRestaurants);
 app.post('/family',mainCtrl.postFamily);
 app.get('/skills',mainCtrl.getSkills);
 app.post('/skills',middleware.generateId,mainCtrl.postSkills);
+app.get('/secrets/:userName/:pin',mainCtrl.getSECRETS);
 // console.log(mainCtrl.getHobbies);
 
 //  /restaurants/Papa+Johns

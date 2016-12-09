@@ -1,5 +1,6 @@
 var srvc = require('./service');
 var user = require('./user');
+var SECRETS = require('./secrets');
 function putName(req,res,next){
   res.status(200).send(user.name = req.body.name);
 };
@@ -118,13 +119,19 @@ function getSkills(req,res,next){
   res.status(200).send(user.skills);
 };
 function postSkills(req,res,next){
-  console.log(req.count);
   if(req.body.name && req.body.experience){
     req.body.id = req.count;
     user.skills.push(req.body);
     res.status(200).send(user.skills);
   }else{
     res.status(400).send('incorrect format');
+  }
+};
+function getSECRETS(req,res,next){
+  if((req.params.userName && req.params.pin)&&((req.params.userName === SECRETS.userName) && (req.params.pin === SECRETS.pin))){
+    res.status(200).send(SECRETS.skill);
+  }else{
+    res.status(400).send('NO SECRETS FOR YOU\!');
   }
 };
 module.exports = {
@@ -145,6 +152,7 @@ module.exports = {
   postFamily: postFamily,
   postRestaurants: postRestaurants,
   getSkills: getSkills,
-  postSkills: postSkills
+  postSkills: postSkills,
+  getSECRETS: getSECRETS
 };
 // console.log(user.occupations);

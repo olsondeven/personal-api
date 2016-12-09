@@ -13,8 +13,8 @@ module.exports = {
     next();
   },
   generateId: function(req,res,next){
-    var count = 5;
     req.count = count++;
     next();
   }
 }
+var count = 6;

@@ -79,11 +79,11 @@ module.exports = {
       experience: 'intermediate'
     },
     {
-      id: 2,
+      id: 3,
       name: 'css',
       experience: 'intermediate'
     },
-    {id:3,name:'node.js',experience:'intermediate'},
-    {id:4,name:'witch craft',experience:'expert'}
+    {id:4,name:'node.js',experience:'intermediate'},
+    {id:5,name:'witch craft',experience:'expert'}
   ]
 };
