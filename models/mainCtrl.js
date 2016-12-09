@@ -120,7 +120,6 @@ function getSkills(req,res,next){
 };
 function postSkills(req,res,next){
   if(req.body.name && req.body.experience){
-    req.body.id = req.count;
     user.skills.push(req.body);
     res.status(200).send(user.skills);
   }else{

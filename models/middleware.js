@@ -1,3 +1,4 @@
+var user = require('./user.js');
 module.exports = {
 
   addHeaders: function(req, res, next) {
@@ -13,8 +14,7 @@ module.exports = {
     next();
   },
   generateId: function(req,res,next){
-    req.count = count++;
+    req.body.id = ((user.skills.length)+1);
     next();
   }
 }
-var count = 6;
