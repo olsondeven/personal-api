@@ -3,7 +3,6 @@ var bodyParser = require('body-parser');
 var config = require('./config.js');
 var mainCtrl = require('./models/mainCtrl.js');
 var middleware = require('./models/middleware.js');
-//cors
 
 var app = express();
 
@@ -21,10 +20,17 @@ app.get('/family',mainCtrl.getFamily);
 app.get('/family/:gender',mainCtrl.getFamilyGender);
 app.get('/restaurants', mainCtrl.getRestaurants);
 app.get('/restaurants/:name',mainCtrl.getRestaurantsName);
+app.put('/name',mainCtrl.putName);
+app.put('/location',mainCtrl.putLocation);
+app.post('/hobbies',mainCtrl.postHobbies);
+app.post('/occupations',mainCtrl.postOccupations);
+app.post('/restaurants',mainCtrl.postRestaurants);
+app.post('/family',mainCtrl.postFamily);
+app.get('/skills',mainCtrl.getSkills);
+app.post('/skills',middleware.generateId,mainCtrl.postSkills);
 // console.log(mainCtrl.getHobbies);
 
 //  /restaurants/Papa+Johns
-
 
 app.listen(config.port,function(){
   console.log('listening to ',config.port);
